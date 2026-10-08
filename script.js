@@ -104,4 +104,41 @@
       }
     });
   }
+  document.querySelectorAll('[data-jam]').forEach(card => {
+    const jam = (config.gameJams || [])[Number(card.dataset.jam)];
+    if (!jam || typeof jam !== 'object') return;
+    if (typeof jam.title === 'string' && jam.title.trim()) card.querySelector('h3').textContent = jam.title;
+    const description = card.querySelector('[data-jam-description]');
+    if (typeof jam.description === 'string' && jam.description.trim()) {
+      description.textContent = jam.description;
+      description.hidden = false;
+    }
+    if (Array.isArray(jam.links)) {
+      const links = document.createElement('div');
+      links.className = 'actions jam-links';
+      jam.links.forEach(item => {
+        if (!item || typeof item.label !== 'string' || !item.label.trim() || typeof item.url !== 'string') return;
+        let url;
+        try { url = new URL(item.url.trim()); } catch { return; }
+        if (!['https:', 'http:'].includes(url.protocol)) return;
+        const link = document.createElement('a');
+        link.className = 'button';
+        link.textContent = item.label.trim() + ' ↗';
+        link.href = url.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        links.append(link);
+      });
+      if (links.childElementCount) card.append(links);
+    }
+    if (typeof jam.videoId !== 'string' || !/^[A-Za-z0-9_-]{11}$/.test(jam.videoId)) return;
+    const frame = document.createElement('iframe');
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + jam.videoId;
+    frame.title = card.querySelector('h3').textContent + ' — gameplay video';
+    frame.loading = 'lazy';
+    frame.allow = 'encrypted-media; picture-in-picture; fullscreen';
+    frame.allowFullscreen = true;
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+    card.querySelector('.jam-video').replaceChildren(frame);
+  });
 })();
