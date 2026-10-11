@@ -38,7 +38,7 @@ window.PORTFOLIO = {
   },
   // Paste the 11-character YouTube video ID, NOT the entire URL.
   videos: {
-    "plastic-battlegrounds": "",
+    "plastic-battlegrounds": "9bYM4bq0iPI",
     "minimap-plugin": "",
     "vehicles": "",
     "pixoul": "rr8bqWuVRLE",
@@ -52,9 +52,12 @@ window.PORTFOLIO = {
     "pixoul": [
     ],
     "plastic-battlegrounds": [
+		{ type: "youtube", id: "mZaQuuAFshs", section: "Multiplayer and online services", caption: "Plastic Battlegrounds Early Multiplayer." }.
 	],
     "minimap-plugin": [],
-    "vehicles": [],
+    "vehicles": [
+		{ type: "youtube", id: "shorts/OAW0iNrgDpw" },
+	],
     "cry-of-athena": [
 		{ type: "youtube", id: "koQxKfsUEAM", section: "Vehicles and bullet interactions", caption: "Vehicle AI Behavior." },
 	],
