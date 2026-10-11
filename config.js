@@ -29,10 +29,10 @@ window.PORTFOLIO = {
   ],
   // Paths are relative to the website root. Add your own approved screenshots.
   posters: {
-    "plastic-battlegrounds": "",
+    "plastic-battlegrounds": "assets/PBG.png",
     "minimap-plugin": "",
     "vehicles": "",
-    "pixoul": "",
+    "pixoul": "assets/pixoul.png",
     "cry-of-athena": "",
     "actor-pooling": ""
   },
@@ -50,14 +50,19 @@ window.PORTFOLIO = {
   // Omit section to put the item below the main project video.
   media: {
     "pixoul": [
+      { type: "youtube", id: "0Qql4vEDw1U", section: "Player interaction and weapons", caption: "Protube VR in pixoul planet." },
+      { type: "youtube", id: "g7y5F0zfn9I", section: "Enemy AI and behaviours", caption: "Operation B players vs Enemy drones."},
+      { type: "youtube", id: "mxEdw94qOuM", section: "Enemy AI and behaviours", caption: "The lift, 4 player co-op."},
     ],
     "plastic-battlegrounds": [
-		{ type: "youtube", id: "mZaQuuAFshs", section: "Multiplayer and online services", caption: "Plastic Battlegrounds Early Multiplayer." }.
+		  { type: "youtube", id: "mZaQuuAFshs", section: "Multiplayer and online services", caption: "Plastic Battlegrounds Early Multiplayer." },
+      { type: "youtube", id: "hI1XESFooEk", section: "Multiplayer and online services", caption: "Multiplayer 1.0 release." },
+      { type: "youtube", id: "uWc6U8BTcI8", section: "Vehicle and tank gameplay", caption: "PBG T34 Tank release." }
 	],
     "minimap-plugin": [],
     "vehicles": [
-		{ type: "youtube", id: "shorts/OAW0iNrgDpw" },
-	],
+      { type: "youtube", id: "OAW0iNrgDpw", section: "Tank steering", caption: "First look at PBG Tank steering." },
+    ],
     "cry-of-athena": [
 		{ type: "youtube", id: "koQxKfsUEAM", section: "Vehicles and bullet interactions", caption: "Vehicle AI Behavior." },
 	],

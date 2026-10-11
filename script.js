@@ -32,7 +32,7 @@
     if (!url) return;
     const img = new Image();
     img.alt = ''; // Adjacent project title identifies the image/link.
-    img.loading = 'lazy';
+    img.loading = 'eager';
     img.addEventListener('load', () => art.replaceChildren(img));
     img.src = url;
   });
